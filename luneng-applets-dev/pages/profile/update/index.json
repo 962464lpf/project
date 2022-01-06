@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+		"van-tree-select": "@vant/weapp/tree-select/index",
+		"van-checkbox": "@vant/weapp/checkbox/index",
+		"van-checkbox-group": "@vant/weapp/checkbox-group/index",
+		"van-button": "@vant/weapp/button/index"
+	},
+	"navigationBarTitleText": "修改信息"
+}

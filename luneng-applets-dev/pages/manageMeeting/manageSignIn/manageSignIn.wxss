@@ -1,0 +1,67 @@
+.container {
+  padding: 25rpx 0;
+}
+.swiper-cell {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.swiper-cell-content {
+  width: 100%;
+  padding: 15rpx 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #333;
+  font-size: 26rpx;
+  position: relative;
+}
+.text1 {
+  box-sizing: border-box;
+  width: 20%;
+  text-align: left;
+  padding-left: 30rpx;
+  border-right: 1px solid #c5bebe;
+  position: relative;
+}
+.text2 {
+  width: 65%;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+  margin-right: 15%;
+}
+.text3 {
+  width: 15%;
+  padding: 15rpx 0;
+  background-color: rgb(241, 146, 57);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #fff;
+}
+.van-swipe-cell__right {
+  width: 130rpx;
+  height: 100%;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.temp-person {
+  width: 100%;
+  padding: 20rpx 20rpx 20rpx 50rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #000;
+}
+.add-person {
+  padding: 15rpx 30rpx;
+  font-size: 28rpx;
+  background-color: rgb(33, 167, 91);
+  color: #fff;
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+}

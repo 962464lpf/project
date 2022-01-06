@@ -1,0 +1,63 @@
+<view class="container">
+	<view class="flex-ver form-box">
+		<view class="label-text">项目名称</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.projectName ? form.projectName : '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">承担单位</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.undertakeUnit ? form.undertakeUnit : '暂无' }}</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">月份</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.reportMonthName ? form.reportMonthName : '暂无' }}</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">创建信息</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.createBy ? (form.createBy + '编制于' + form.createTime) : '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">填报人</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.filledBy ? form.filledBy : '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">联系电话</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.linkPhone ? form.linkPhone : '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">项目研究进度及取得的成果</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.content1 ? form.content1: '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">任务完成情况</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.content2 ? form.content2: '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">存在问题及解决措施</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.content3 ? form.content3: '暂无' }}</view>
+		</view>
+	</view>
+  <view class="flex-ver form-box">
+		<view class="label-text">下月工作计划安排</view>
+		<view class="input-box">
+			<view class="input-style">{{ form.content4 ? form.content4: '暂无' }}</view>
+		</view>
+	</view>
+</view>
+	

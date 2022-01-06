@@ -1,0 +1,127 @@
+<view class="container">
+	<view class="flex-ver form-box">
+		<view class="label-text"><span class="star">*</span>台账标题</view>
+		<view class="input-box">
+			<input
+				class="input-style"
+				placeholder="请输入台账标题"
+				value="{{ ledgerForm.accountTitle }}"  
+				maxlength="30"
+				bindblur="submitInput1" 
+				bindconfirm="submitInput1"
+			/>
+		</view>
+		<view wx:if="{{ showTipText1 }}" class="flex-hor-align tip-text">
+			<span>台账标题不能为空，最多30个字符</span>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text"><span class="star">*</span>工作类型</view>
+		<view class="input-box">
+			<input
+				class="input-style"
+				placeholder="请输入工作类型"
+				value="{{ ledgerForm.workType }}"  
+				maxlength="10"
+				bindblur="submitInput2" 
+				bindconfirm="submitInput2"
+			/>
+		</view>
+		<view wx:if="{{ showTipText2 }}" class="flex-hor-align tip-text">
+			<span>工作类型不能为空，最多10个字符</span>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">相关项目</view>
+		<view class="input-box disable-bg">
+			<view class="input-style">该功能仅PC端使用</view>
+		</view>
+	</view>
+	<view class="flex-hor-align form-box">
+		<view class="time-box">
+			<view class="label-text"><span class="star">*</span>开始时间</view>
+			<view class="input-box extra-height" style="{{ showTipText3 || showTipText4 ? 'height: 70rpx;' : ''}}">
+				<view class="input-style" data-order="1" catch:tap="openTimePicker">
+					{{ ledgerForm.workBeginDate ? ledgerForm.workBeginDate : '请选择日期' }}
+				</view>
+				<view wx:if="{{ showTipText3 }}" class="flex-hor-align tip-text">
+					<span>开始时间不能为空</span>
+				</view>
+			</view>
+		</view>
+		<view class="time-box">
+			<view class="label-text"><span class="star">*</span>结束时间</view>
+			<view class="input-box extra-height" style="{{ showTipText3 || showTipText4 ? 'height: 70rpx;' : ''}}">
+				<view class="input-style" data-order="2" catch:tap="openTimePicker">
+					{{ ledgerForm.workEndDate ? ledgerForm.workEndDate : '请选择日期' }}
+				</view>
+				<view wx:if="{{ showTipText4 }}" class="flex-hor-align tip-text">
+					<span>结束时间不能为空</span>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">相关地点</view>
+		<view class="input-box">
+			<input
+				class="input-style"
+				placeholder="请输入相关地点"
+				value="{{ ledgerForm.workAddress }}"  
+				maxlength="25"
+				bindblur="submitInput3" 
+				bindconfirm="submitInput3"
+			/>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text"><span class="star">*</span>工作内容</view>
+		<view id="toolbar" class="toolbar" catchtouchend="format" style="{{ stickyClass }}">
+		  <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+		  <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+		  <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+		  <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+		  <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+		  <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+		  <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+			<i class="iconfont icon-shanchu" bindtap="clear"></i>
+		</view>
+		<view class="input-box extra-editor">
+			<editor 
+				id="editor" 
+				class="ql-container" 
+				placeholder="{{ placeholder }}" 
+				show-img-size
+				show-img-toolbar
+				show-img-resize
+				bindinput="editorBlur"
+				bindstatuschange="onStatusChange" 
+				bindready="onEditorReady">
+			</editor>
+		</view>
+	</view>
+</view>
+<view class="flex-hor-align submit-box">
+	<view class="submit-btn">
+		<van-button type="primary" size="large" block bind:click="saveSubmit">保存</van-button>
+	</view>
+	<view class="submit-btn">
+		<van-button type="primary" size="large" block bind:click="doneSubmit">提交</van-button>
+	</view>
+</view>
+<van-popup
+	show="{{ showPopup }}"
+	position="bottom"
+	custom-style="height: 60%"
+	catch:click-overlay="closeTimeSelect"
+	catch:close="closeTimeSelect">
+	<view class="time-picker-box">
+		<van-datetime-picker
+		  type="date"
+		  value="{{ currentDate }}"
+			bind:confirm="confirmTime"
+			bind:cancel="closeTimeSelect"
+		/>
+	</view>
+</van-popup>
+	

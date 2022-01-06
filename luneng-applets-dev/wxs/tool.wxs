@@ -1,0 +1,76 @@
+var meetingStatus = function (status) {
+	switch (status) {
+    case '0':
+      return '未开始';
+    case '1':
+      return '进行中';
+    case '2':
+      return '已结束';
+    case '3':
+      return '已归档';
+  }
+}
+
+var meetingStatusColor = function (status) {
+	switch (status) {
+    case '0':
+      return '#A7732D'
+    case '1':
+      return '#66B531'
+    case '2':
+      return '#B50121'
+    case '3':
+      return '#565656'
+  }
+}
+
+var reportTime = function (time) {
+  var timeArr = time.split(',')
+	var reg = getRegExp('-', 'g')
+  return timeArr[0].replace(reg, '.') + '-' + timeArr[1].substring(6, 10).replace(reg, '.')
+}
+
+var reportStatus = function (status) {
+  switch (status) {
+    case -1:
+      return '未添加';
+    case 0:
+      return '已保存';
+    case 1:
+      return '已提交';
+    case 2:
+      return '已阅';
+    case 3:
+      return '待修改';
+  }
+}
+
+var reportStatusColor = function (status) {
+  switch (status) {
+    case -1:
+      return '#A7732D';
+    case 0:
+      return '#A9A9A9';
+    case 1:
+      return '#66B531';
+    case 2:
+      return '#66B531';
+    case 3:
+      return '#B50121';
+  }
+}
+
+var meetingTime = function (time) {
+  if (time) {
+    return time.substring(0, 10)
+  }
+}
+
+module.exports = {
+  meetingStatus: meetingStatus,
+  meetingStatusColor: meetingStatusColor,
+  reportTime: reportTime,
+  reportStatus: reportStatus,
+  reportStatusColor: reportStatusColor,
+  meetingTime: meetingTime
+};

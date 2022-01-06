@@ -1,0 +1,52 @@
+.search-box {
+	width: 100%;
+	margin-bottom: 20rpx;
+}
+.van-search {
+	padding: 0!important;
+}
+.unit-box {
+	width: calc(100% + 50rpx);
+}
+.unit-name {
+	width: 100%;
+}
+.unit-member-label {
+	width: calc(100% - 50rpx);
+}
+.member-label {
+	flex: 1;
+	text-align: center;
+	color: #323232;
+	font-size: 28rpx;
+	padding: 20rpx 0;
+}
+.unit-member-list {
+	width: calc(100% - 50rpx);
+}
+
+.member-list-item {
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 10rpx;
+	padding: 15rpx 0;
+	background-color: #fff;
+}
+.member-label1 {
+	width: 32%;
+	flex-shrink: 0;
+	text-align: center;
+	color: #666;
+	font-size: 28rpx;
+	padding: 5rpx 0;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.border-line {
+	border-left: 1rpx solid #666;
+	border-right: 1rpx solid #666;
+}
+.tree-select-box {
+	height: 100%;
+	width: 100%;
+}

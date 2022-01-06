@@ -1,0 +1,90 @@
+<view class="container">
+	<block wx:if="{{userInfo.userId}}">
+		<view class="profile-box">
+		<view class="info-row" bind:tap="updateAvatar">
+			<view class="label-text">头像</view>
+			<view class="content-box">
+				<van-image
+					width="70rpx"
+					height="70rpx"
+				  lazy-load
+					round
+					bind:click="updateAvatar"
+					fit="cover"
+				  src="{{ userInfo.avatar }}"
+				/>
+			</view>
+			<van-icon name="arrow" color="#999" size="32rpx"/>
+		</view>
+		<view class="info-row" data-order="1" bind:tap="navUpdatePage">
+			<view class="label-text">姓名</view>
+			<view class="content-box">{{ userInfo.nickName ? userInfo.nickName : '无' }}</view>
+			<van-icon name="arrow" color="#999" size="32rpx" />
+		</view>
+		<view class="info-row" data-order="2" bind:tap="navUpdatePage">
+			<view class="label-text">性别</view>
+			<view class="content-box">{{ userInfo.sex ? (userInfo.sex === '0' ? '男' : '女') : '无' }}</view>
+			<van-icon name="arrow" color="#999" size="32rpx"  />
+		</view>
+		</view>
+		<view class="profile-box">
+			<view class="info-row" data-order="3" bind:tap="navUpdatePage">
+				<view class="label-text">手机号码</view>
+				<view class="content-box">{{ userInfo.phonenumber ? userInfo.phonenumber : '无' }}</view>
+				<van-icon name="arrow" color="#999" size="32rpx"  />
+			</view>
+			<view class="info-row" data-order="4" bind:tap="navUpdatePage">
+				<view class="label-text">邮箱</view>
+				<view class="content-box">{{ userInfo.email ? userInfo.email : '无' }}</view>
+				<van-icon name="arrow" color="#999" size="32rpx" />
+			</view>
+			<view class="info-row" data-order="5" bind:tap="navUpdatePage">
+				<view class="label-text">座机</view>
+				<view class="content-box">{{ userInfo.mobile ? userInfo.mobile : '无' }}</view>
+				<van-icon name="arrow" color="#999" size="32rpx" />
+			</view>
+		</view>
+		<view class="profile-box disabled-bg">
+			<view class="info-row">
+				<view class="label-text">单位</view>
+				<view class="content-box">{{ userInfo.deptName ? userInfo.deptName : '无' }}</view>
+				<!-- <van-icon name="arrow" color="#999" size="32rpx" data-order="6" bind:tap="navUpdatePage"/> -->
+			</view>
+			<view class="info-row">
+				<view class="label-text">岗位</view>
+				<view class="content-box">{{ userInfo.post ? userInfo.post : '无' }}</view>
+				<!-- <van-icon name="arrow" color="#999" size="32rpx" data-order="7" bind:tap="navUpdatePage"/> -->
+			</view>
+		</view>
+		<view class="profile-box">
+			<view class="info-row-out">
+				<view class="login-out" bindtap="loginOut">
+					解绑退出登录
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="profile-box-no">
+			<van-empty description="您还未登录">
+				<van-button 
+					custom-style="width: 400rpx" 
+					round type="primary" 
+					bind:click="navLogin"
+					size="large">去登录
+				</van-button>
+			</van-empty>
+		</view>
+	</block>
+</view>
+<van-dialog
+	use-slot
+	title="设置头像"
+	show="{{ showDialog }}"
+	show-cancel-button
+	bind:confirm="onConfirm"
+	bind:close="onClose">
+	<view class="preview-img">
+		<image class="preview-avatar" mode="center" src="{{ previewImg }}" />
+	</view>
+</van-dialog>

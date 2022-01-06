@@ -1,0 +1,55 @@
+<movable-area class="move-area">
+	<movable-view 
+		y="{{ moveY }}" 
+		direction="vertical" 
+		damping="{{ 30 }}"
+		bindchange="movableChange"
+		inertia 
+		class="move-view">
+		<van-icon name="add" color="#1E90FF" size="90rpx" catch:click="addLedger"/>
+	</movable-view>
+	<view class="container">
+		<block wx:if="{{ workLedgerList.length }}">
+			<view
+				wx:for="{{ workLedgerList }}"
+				wx:key="index"
+				data-id="{{ item.id }}"
+				bind:tap="{{ item.publishStatus === 1 ? 'navDetail' : ''}}"
+				class="flex-ver-align work-ledger">
+				<view class="flex-hor-align work-ledger-name" data-id="{{ item.id }}" bind:tap="navDetail">
+					<view class="title van-ellipsis">{{ item.accountTitle }}</view>
+					<view class="status" style="{{ item.publishStatus === 1 ? 'color: red;' : '' }}">{{ item.publishStatus === 0 ? '草稿' : '已发布' }}</view>
+				</view>
+				<view class="flex-hor-align work-ledger-content">
+					<view class="flex-ver content-box" data-id="{{ item.id }}" bind:tap="navDetail">
+						<view class="content-type van-ellipsis">{{ item.workType }}</view>
+						<view class="content-time">{{ item.workBeginDate + '至' + item.workEndDate }}</view>
+					</view>
+					<view class="flex-hor-align operate-box">
+						<van-icon 
+							wx:if="{{ item.publishStatus === 0 }}" 
+							name="edit"
+							data-id="{{ item.id }}"
+							color="#1989fa" 
+							size="50rpx"
+							catch:click="updateLedger"
+						/>
+						<van-icon
+							wx:if="{{ item.publishStatus === 0 }}" 
+							name="delete" 
+							color="red" 
+							size="50rpx"
+							data-index = "{{ index }}"
+							data-id="{{ item.id }}"
+							catch:click="deleteLedger"
+						/>
+					</view>
+				</view>
+			</view>
+			<van-divider wx:if="{{ workLedgerList.length > 8 }}" contentPosition="center" hairline>我是有底线的～</van-divider>
+		</block>
+		<block wx:else>
+			<van-empty description="没有查询到数据哦～" />
+		</block>
+	</view>
+</movable-area>

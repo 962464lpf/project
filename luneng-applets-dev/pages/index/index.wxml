@@ -1,0 +1,42 @@
+<view class="container">
+	<block wx:if="{{ workMenus.length }}">
+		<view
+			wx:for="{{ workMenus }}"
+			wx:key="index"
+			class="flex-ver-align work-menu">
+			<view class="flex-hor-align work-menu-name">
+				<van-image
+				  width="70rpx"
+				  lazy-load
+					fit="widthFix"
+				  src="{{ item.icon }}"
+				/>
+				<text class="menu-name">{{ item.name }}</text>
+			</view>
+			<view class="flex-hor-align work-menu-list">
+				<view
+					wx:for="{{ item.children }}"
+					wx:for-item="subItem"
+					wx:for-index="idx" 
+					wx:key="idx"
+					data-url="{{ subItem.url }}"
+					data-status="{{ subItem.releaseFlag }}"
+					data-type-name="{{ item.name }}"
+					data-typetitle="{{ subItem.name }}"
+					catchtap="navWorkList"
+					class="flex-hor-align work-menu-list-item">
+					<van-image
+					  width="55rpx"
+						fit="widthFix"
+					  lazy-load
+					  src="{{ subItem.icon }}"
+					/>
+					<text class="list-item-name">{{ subItem.name }}</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<van-empty description="没有查询到数据哦～" />
+	</block>
+</view>

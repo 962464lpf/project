@@ -1,0 +1,45 @@
+<wxs src="./../../wxs/tool.wxs" module="tool" />
+<view class="container">
+	<block wx:if="{{ workList.length }}">
+		<view
+			wx:for="{{ workList }}"
+			wx:key="index"
+			class="list-item">
+			<van-panel
+				wx:if="{{ item.wxTitle }}"
+				header-class="panel-header-box"
+				title="{{ item.wxTitle }}"
+				status="{{ item.wxStatus }}"
+				data-id="{{item.id}}"
+				data-flag="{{item.returnFlag}}"
+				bindtap="navDetail"
+			>
+				<view class="flex-ver content-box" wx:if="{{ item.wxOthers.length }}">
+					<text 
+						wx:for="{{ item.wxOthers }}" 
+						wx:for-index="idx" 
+						wx:key="idx"
+						wx:for-item="subItem">
+						{{ subItem }}
+					</text>
+				</view>
+				<view class="flex-ver content-footer" wx:if="{{ item.wxChildren.length }}">
+					<view 
+						class="flex-hor-align content-footer-item"
+						wx:for="{{ item.wxChildren }}" 
+						wx:for-index="idx" 
+						wx:key="idx"
+						wx:for-item="subItem">
+						<text class="content-footer-item-first">{{tool.reportTime(subItem.reportTime)}}</text>
+						<text class="content-footer-item-second">{{subItem.reportName ? subItem.reportName : ''}}</text>
+						<text style="color: {{tool.reportStatusColor(subItem.status)}}" class="content-footer-item-third">{{tool.reportStatus(subItem.status)}}</text>
+					</view>
+				</view>
+			</van-panel>
+		</view>
+		<van-divider contentPosition="center" hairline>我是有底线的～</van-divider>
+	</block>
+	<block wx:else>
+		<van-empty description="没有查询到数据哦～" />
+	</block>
+</view>

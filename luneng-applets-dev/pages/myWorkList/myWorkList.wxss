@@ -1,0 +1,42 @@
+.list-item {
+	width: 100%;
+	margin-bottom: 30rpx;
+}
+
+.panel-header-box .van-cell__value{
+	color: #1E90FF!important;
+}
+
+.content-box {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 20rpx 25rpx 20rpx;
+	font-size: 26rpx;
+	color: #666;
+}
+.content-footer {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 20rpx 25rpx 20rpx;
+	font-size: 26rpx;
+	color: #666;
+}
+.content-footer-item {
+	width: 100%;
+	justify-content: space-between;
+	padding: 5rpx 0;
+}
+.content-footer-item-first {
+	width: 36%;
+	text-align: left;
+}
+.content-footer-item-second {
+	width: 48%;
+	color: sandybrown;
+	text-align: left;
+}
+.content-footer-item-third {
+	text-align: right;
+	width: 15%;
+	color: sandybrown;
+}

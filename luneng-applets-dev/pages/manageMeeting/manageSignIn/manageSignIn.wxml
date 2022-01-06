@@ -1,0 +1,51 @@
+<view class="container">
+  <view 
+    class="swiper-cell"
+    wx:for="{{ meetingUserList }}"
+    wx:key="id">
+    <view class="flex-hor-align swiper-cell-content">
+      <view class="text1">{{item.nickName}}</view>
+      <view class="text2">{{item.deptName}}</view>
+      <view class="flex-hor-center text3"
+        data-type="1"
+        data-id="{{item.id}}"
+        data-index="{{index}}"
+        data-status="{{item.signStatus}}"
+        bindtap="handleSignIn" 
+        style="background-color: {{item.signStatus === 1 ? '#44B122' : ''}};">
+      {{item.signStatus === 1 ? '已签到' : '签到'}}
+    </view>
+    </view>
+  </view>
+  <view wx:if="{{tempMeetingUserList.length > 0}}" class="temp-person">临时参会人员</view>
+  <view
+    class="swiper-cell"
+    wx:for="{{ tempMeetingUserList }}"
+		wx:key="id">
+    <van-swipe-cell right-width="{{ 65 }}">
+      <view class="flex-hor-align swiper-cell-content">
+        <view class="text1">{{item.nickName}}</view>
+        <view class="text2">{{item.deptName}}</view>
+        <view class="flex-hor-center text3"
+          style="background-color: {{item.signStatus === 1 ? '#44B122' : ''}};"
+          data-type="2"
+          data-id="{{item.id}}"
+          data-index="{{index}}"
+          data-status="{{item.signStatus}}"
+          bindtap="handleSignIn">
+          {{item.signStatus === 1 ? '已签到' : '签到'}}
+        </view>
+      </view>
+      <view slot="right" 
+        class="van-swipe-cell__right" 
+        data-id="{{item.id}}"
+        data-index="{{index}}"
+        bindtap="deletePerson">
+        移除
+      </view>
+    </van-swipe-cell> 
+  </view>
+  <view class="flex-hor-center add-person" bindtap="navUserList">
+    <van-icon name="add-o" size="36rpx" /> <text style="margin-left: 20rpx;">添加临时参会人员</text>
+  </view>
+</view>

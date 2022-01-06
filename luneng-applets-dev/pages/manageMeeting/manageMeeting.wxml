@@ -1,0 +1,42 @@
+<wxs src="./../../wxs/tool.wxs" module="tool" />
+<view class="container">
+  <view class="flex-hor meeting-list"
+    wx:for="{{ meetingList }}"
+    wx:key="id">
+    <view class="flex-ver left">
+      <view class="title">会议名称: {{item.meetingName}}</view>
+      <view class="time">会议时间: {{item.meetingTime}}</view>
+      <view class="address">会议地点: {{item.meetingAddress}}</view>
+      <view class="flex-hor-align bottom-part">
+        <text 
+          data-index="1" 
+          data-id="{{item.id}}" 
+          bindtap="navDetail">
+          会议议程
+        </text>
+        <text 
+          data-index="2" 
+          data-id="{{item.id}}" 
+          bindtap="navDetail">
+          会议记录
+        </text>
+        <text 
+          data-index="3"
+          data-id="{{item.id}}" 
+          bindtap="navDetail">
+          会议纪要
+        </text>
+        <text 
+          wx:if="{{item.isAdmin === '1' && item.status === '1'}}"
+          data-index="4" 
+          data-id="{{item.id}}" 
+          bindtap="navDetail">
+          签到管理
+        </text>
+      </view>
+    </view>
+    <view class="flex-hor-center right" style="color: {{tool.meetingStatusColor(item.status)}}">
+      {{tool.meetingStatus(item.status)}}
+    </view>
+  </view>  
+</view>

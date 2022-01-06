@@ -1,0 +1,111 @@
+{
+  "description": "GDTEMS",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "showES6CompileOption": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.19.2",
+  "appid": "wxd977e7d4f20100b9",
+  "projectname": "GDTEMS",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/workLedger/workLedger",
+          "pathName": "pages/workLedger/workLedger",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addressList/addressList",
+          "pathName": "pages/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/profile/profile",
+          "pathName": "pages/profile/profile",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myWorkList/myWorkList",
+          "pathName": "pages/myWorkList/myWorkList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/workLedger/updateLedger/updateLedger",
+          "pathName": "pages/workLedger/updateLedger/updateLedger",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/profile/update/index",
+          "pathName": "pages/profile/update/index",
+          "query": "order=2",
+          "scene": null
+        },
+        {
+          "name": "pages/login/index",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/workLedger/updateLedger/updateLedger",
+          "pathName": "pages/workLedger/updateLedger/updateLedger",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

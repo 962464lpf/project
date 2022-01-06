@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myWorkList/myWorkList",
+    "pages/workLedgers/workLedgers",
+    "pages/workLedgers/updateLedger/updateLedger",
+    "pages/workLedgers/detail/detail",
+    "pages/addressList/addressList",
+    "pages/profile/profile",
+    "pages/profile/update/index",
+    "pages/login/index",
+    "pages/manageMeeting/manageMeeting",
+    "pages/manageMeeting/meetingDetail/meetingDetail",
+    "pages/manageMeeting/meetingRecord/meetingRecord",
+    "pages/manageMeeting/manageSignIn/manageSignIn",
+    "pages/manageMeeting/manageSignIn/tempMeetingUsers/tempMeetingUsers",
+    "pages/myWorkList/detail/detail"
+  ],
+  "window": {
+    "backgroundColor": "#eaeaea",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#eaeaea",
+    "navigationBarTitleText": "GDTEMS",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的工作"
+      },
+      {
+        "pagePath": "pages/manageMeeting/manageMeeting",
+        "text": "会议管理"
+      },
+      {
+        "pagePath": "pages/addressList/addressList",
+        "text": "通讯录"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

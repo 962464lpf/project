@@ -1,0 +1,89 @@
+<view class="container">
+	<view wx:if="{{ updateFlag === '1'}}" class="flex-ver-align update-box">
+		<view class="input-box">
+			<input value="{{ userInfo.nickName }}" class="input-style" focus bindinput="submitInput" bindconfirm="submitInput"
+			 placeholder="请输入姓名" />
+		</view>
+		<view wx:if="{{ showTipText }}" class="flex-hor-align tip-text">
+			<text>姓名为大小写字母、数字、下划线、中文组合的2-10个字符</text>
+		</view>
+		<view class="flex-hor-align done-box">
+			<van-button disabled="{{ !inputValue }}" type="primary" size="mini" bind:click="submitDone">完成</van-button>
+		</view>
+	</view>
+	<view wx:if="{{ updateFlag === '2'}}" class="flex-ver-align update-box">
+		<view class="input-box">
+			<radio-group bindchange="submitInput">
+				<view class="flex-hor-align radio-box" wx:for="{{ sexRadioItems }}" wx:key="index">
+					<radio value="{{ item.value }}" checked="{{ item.checked }}"></radio>
+					<label class="label-2-text" for="{{ item.name }}"><text>{{item.name}}</text></label>
+				</view>
+			</radio-group>
+		</view>
+		<view class="flex-hor-align done-box">
+			<van-button disabled="{{ !inputValue }}" type="primary" size="mini" bind:click="submitDone">完成</van-button>
+		</view>
+	</view>
+	<view wx:if="{{ updateFlag === '3'}}" class="flex-ver-align update-box">
+		<view class="input-box">
+			<input value="{{ userInfo.phonenumber }}" class="input-style" focus bindinput="submitInput" bindconfirm="submitInput"
+			 placeholder="请输入手机号" />
+		</view>
+		<view wx:if="{{ showTipText }}" class="flex-hor-align tip-text">
+			<text>请输入正确格式的手机号</text>
+		</view>
+		<view class="flex-hor-align done-box">
+			<van-button disabled="{{ !inputValue }}" type="primary" size="mini" bind:click="submitDone">完成</van-button>
+		</view>
+	</view>
+	<view wx:if="{{ updateFlag === '4'}}" class="flex-ver-align update-box">
+		<view class="input-box">
+			<input value="{{ userInfo.email }}" class="input-style" focus bindinput="submitInput" bindconfirm="submitInput"
+			 placeholder="请输入邮箱" />
+		</view>
+		<view wx:if="{{ showTipText }}" class="flex-hor-align tip-text">
+			<text>请输入正确格式的邮箱</text>
+		</view>
+		<view class="flex-hor-align done-box">
+			<van-button disabled="{{ !inputValue }}" type="primary" size="mini" bind:click="submitDone">完成</van-button>
+		</view>
+	</view>
+	<view wx:if="{{ updateFlag === '5'}}" class="flex-ver-align update-box">
+		<view class="input-box">
+			<input value="{{ userInfo.mobile }}" class="input-style" focus bindinput="submitInput" bindconfirm="submitInput"
+			 placeholder="请输入座机" />
+		</view>
+		<view wx:if="{{ showTipText }}" class="flex-hor-align tip-text">
+			<text>请输入正确格式的座机</text>
+		</view>
+		<view class="flex-hor-align done-box">
+			<van-button disabled="{{ !inputValue }}" type="primary" size="mini" bind:click="submitDone">完成</van-button>
+		</view>
+	</view>
+	<!-- <view wx:if="{{ updateFlag === '6'}}" class="flex-ver-align update-box">
+		<view class="input-box">
+			<van-tree-select
+				height="100%"
+			  items="{{ allUnitList }}"
+			  main-active-index="{{ mainActiveIndex }}"
+			  active-id="{{ activeId }}"
+			  catch:click-nav="onClickNav"
+			  catch:click-item="submitInput"
+			/>
+		</view>
+	</view> -->
+	<!-- <view wx:if="{{ updateFlag === '7'}}" class="flex-ver-align update-box">
+		<view class="flex-hor-align done-box">
+			<van-button type="primary" size="mini" bind:click="submitPost">完成</van-button>
+		</view>
+		<view class="input-box">
+			<van-checkbox-group value="{{ postIds }}" bind:change="submitInput">
+				<view class="flex-hor-align checkbox-box" wx:for="{{ allPostList }}" wx:key="index">
+					<van-checkbox checked-color="#07c160" name="{{ item.postId }}">
+						{{ item.postName }}
+					</van-checkbox>
+				</view>
+			</van-checkbox-group>
+		</view>
+	</view> -->
+</view>

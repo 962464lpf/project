@@ -1,0 +1,56 @@
+.meeting-list {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25rpx 5rpx 25rpx 25rpx;
+  box-shadow: 0 0 5rpx rgb(43, 43, 43, 0.3);
+  background-color: #fff;
+  border-radius: 16rpx;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.meeting-list .left {
+  width: calc(100% - 130rpx);
+}
+
+.meeting-list .left .title {
+  width: 100%;
+  color: #000;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.meeting-list .left .time {
+  width: 100%;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.meeting-list .left .address {
+  width: 100%;
+  color: #666;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+
+.meeting-list .left .bottom-part {
+  width: 100%;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+
+.meeting-list .left .bottom-part text:nth-of-type(2n + 1) {
+  color: rgb(72, 124, 176);
+}
+
+.meeting-list .left .bottom-part text:nth-of-type(2n) {
+  color: rgb(135, 181, 43);
+}
+
+.meeting-list .right {
+  width: 100rpx;
+  color: rgb(167, 115, 45);
+  font-size: 28rpx;
+  font-weight: 600;
+}

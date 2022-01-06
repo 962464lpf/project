@@ -1,0 +1,68 @@
+<view class="container">
+	<view class="search-box">
+		<van-search
+			value="{{ inputUnitName }}"
+			input-align="center"
+			placeholder="请输入单位名字查询"
+			show-action="{{ showSearchCancel }}"
+			clearable
+			background="#eaeaea"
+			bind:focus="onFocus"
+			bind:search="onSearch"
+			bind:cancel="onCancel"
+		/>
+	</view>
+	<view class="flex-ver-align unit-box">
+		<view class="unit-name">
+			<van-cell
+				title="单位"
+				title-width="80rpx"
+				is-link
+				bind:click="showUnitSelect"
+				value="{{ unitName }}"></van-cell>
+		</view>
+		<view class="flex-hor-align unit-member-label">
+			<text class="member-label">姓名</text>
+			<text class="member-label">岗位</text>
+			<text class="member-label">联系方式</text>
+		</view>
+		<view class="flex-ver-align unit-member-list">
+			<view
+				wx:if="{{ memberList.length }}"
+				wx:for="{{ memberList }}"
+				wx:key="index"
+				class="flex-hor-align member-list-item">
+				<block>
+					<text wx:if="{{ item.nickName }}" class="member-label1">{{ item.nickName }}</text>
+					<text wx:else class="member-label1">无</text>
+				</block>
+				<block>
+					<text wx:if="{{ item.post }}" class="member-label1 border-line">{{ item.post }}</text>
+					<text wx:else class="member-label1 border-line">无</text>
+				</block>
+				<block>
+					<text wx:if="{{ item.phonenumber || item.mobile }}" class="member-label1">{{ item.phonenumber || item.mobile }}</text>
+					<text wx:else class="member-label1">无</text>
+				</block>
+			</view>
+			<van-empty wx:if="{{ !memberList.length }}" description="没有查询到数据哦～" />	
+		</view>
+	</view>
+	<van-popup
+		show="{{ showPopup }}"
+		position="bottom"
+		custom-style="height: 70%"
+		catch:click-overlay="closeUnitSelect"
+		catch:close="closeUnitSelect">
+		<view class="tree-select-box">
+			<van-tree-select
+				height="100%"
+			  items="{{ addressList }}"
+			  main-active-index="{{ mainActiveIndex }}"
+			  active-id="{{ activeId }}"
+			  catch:click-nav="onClickNav"
+			  catch:click-item="onClickItem"
+			/>
+		</view>
+	</van-popup>
+</view>

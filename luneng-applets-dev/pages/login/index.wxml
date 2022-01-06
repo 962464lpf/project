@@ -1,0 +1,32 @@
+<view class="container">
+	<view class="flex-ver-align logo-box">
+		<van-image
+		  width="200rpx"
+		  lazy-load
+			fit="widthFix"
+		  src="/images/logo.png"
+		/>
+	</view>
+	<view class="flex-ver-align logo-text"> GDTEMS </view>
+	<view wx:if="{{ showLogin }}" class="flex-ver-align login-input">
+		<input 
+			value="{{ username }}" 
+			class="input-style" 
+			bindblur="saveUsername"
+			bindconfirm="saveUsername"
+			placeholder="请输入登录账号" />
+		<input 
+			value="{{ password }}" 
+			class="input-style"
+			password
+			bindblur="savePassword"
+			bindconfirm="savePassword"
+			placeholder="请输入登录密码" />
+	</view>
+	<view wx:if="{{ showLogin }}" class="tip-text">
+		（输入的登录账号会绑定您的当前微信，可在个人中心解绑）
+	</view>
+	<view wx:if="{{ showLogin }}" class="login-btn" bindtap="loginSubmit">
+		<van-button type="primary" size="large" block bind:click="loginSubmit">立即登录</van-button>
+	</view>
+</view>

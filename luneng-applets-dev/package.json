@@ -1,0 +1,19 @@
+{
+  "name": "GDTEMS",
+  "version": "1.0.0",
+  "description": "鲁能小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://47.105.101.72:8080/sz/luneng-applets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.8.3"
+  }
+}

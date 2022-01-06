@@ -1,0 +1,53 @@
+<view class="container">
+	<view class="flex-ver form-box">
+		<view class="label-text">台账标题</view>
+		<view class="input-box">
+			<view class="input-style">{{ ledgerForm.accountTitle ? ledgerForm.accountTitle : '暂无' }}</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">工作类型</view>
+		<view class="input-box">
+			<view class="input-style">{{ ledgerForm.workType ? ledgerForm.workType : '暂无' }}</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">相关项目</view>
+		<view class="input-box disable-bg">
+			<view class="input-style">该功能仅PC端使用</view>
+		</view>
+	</view>
+	<view class="flex-hor-align form-box">
+		<view class="time-box">
+			<view class="label-text">开始时间</view>
+			<view class="input-box extra-height">
+				<view class="input-style">{{ ledgerForm.workBeginDate ? ledgerForm.workBeginDate : '暂无' }}</view>
+			</view>
+		</view>
+		<view class="time-box">
+			<view class="label-text">结束时间</view>
+			<view class="input-box extra-height">
+				<view class="input-style">{{ ledgerForm.workEndDate ? ledgerForm.workEndDate : '暂无' }}</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">相关地点</view>
+		<view class="input-box">
+			<view class="input-style">{{ ledgerForm.workAddress ? ledgerForm.workAddress : '暂无' }}</view>
+		</view>
+	</view>
+	<view class="flex-ver form-box">
+		<view class="label-text">工作内容</view>
+		<view class="input-box extra-editor">
+			<editor
+				id="editor" 
+				class="ql-container" 
+				placeholder="{{ placeholder }}" 
+				read-only="{{ true }}" 
+				bindready="onEditorReady">
+			</editor>
+		</view>
+	</view>
+</view>
+	

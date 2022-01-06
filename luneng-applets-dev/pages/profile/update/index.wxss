@@ -1,0 +1,51 @@
+.container {
+	padding-bottom: 0;
+}
+.update-box {
+	width: 100%;
+	padding: 25rpx 20rpx;
+	background-color: #fff;
+}
+.input-box {
+	width: 100%;
+}
+.input-style {
+	font-size: 28rpx;
+	color: #333;
+}
+.tip-text {
+	width: 100%;
+	justify-content: flex-end;
+	font-size: 20rpx;
+	color: red;
+	margin-top: 5rpx;
+}
+
+.radio-box {
+	width: 100%;
+}
+
+.radio-box:nth-of-type(1) {
+	padding-bottom: 20rpx;
+	margin-bottom: 20rpx;
+	border-bottom: 1rpx solid #eaeaea;
+}
+
+.done-box {
+	width: 100%;
+	justify-content: flex-end;
+	margin-top: 20rpx;
+}
+
+.checkbox-box {
+	width: 100%;
+	padding-bottom: 20rpx;
+	margin-bottom: 20rpx;
+	border-bottom: 1rpx solid #eaeaea;
+}
+
+.checkbox-box:nth-last-of-type(1) {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: 0;
+}

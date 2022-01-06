@@ -1,0 +1,79 @@
+<view class="container">
+	<view class="search-box">
+		<van-search
+			value="{{ inputUnitName }}"
+			input-align="center"
+			placeholder="请输入单位名字查询"
+			show-action="{{ showSearchCancel }}"
+			clearable
+			background="#eaeaea"
+			bind:focus="onFocus"
+			bind:search="onSearch"
+			bind:cancel="onCancel"
+		/>
+	</view>
+	<view class="flex-ver-align unit-box">
+		<view class="unit-name">
+			<van-cell
+				title="单位"
+				title-width="80rpx"
+				is-link
+				bind:click="showUnitSelect"
+				value="{{ deptName }}"></van-cell>
+		</view>
+		<view class="flex-hor-align unit-member-label">
+			<text class="member-label">姓名</text>
+			<text class="member-label">岗位</text>
+			<text class="member-label">联系方式</text>
+			<text class="member-label-opt">操作</text>
+		</view>
+		<view class="flex-ver-align unit-member-list">
+			<view
+				wx:if="{{ userList.length }}"
+				wx:for="{{ userList }}"
+				wx:key="index"
+				class="flex-hor-align member-list-item">
+				<block>
+					<text wx:if="{{ item.nickName }}" class="member-label1">{{ item.nickName }}</text>
+					<text wx:else class="member-label1">无</text>
+				</block>
+				<block>
+					<text wx:if="{{ item.postName }}" class="member-label1 border-line">{{ item.postName }}</text>
+					<text wx:else class="member-label1 border-line">无</text>
+				</block>
+				<block>
+					<text wx:if="{{ item.mobile}}" class="member-label1">{{ item.mobile }}</text>
+					<text wx:else class="member-label1">无</text>
+				</block>
+				<block>
+					<view class="flex-hor-center text3"
+						style="background-color: {{item.ifAdd ? '#44B122' : ''}};"
+						data-id="{{item.userId}}"
+          	data-index="{{index}}"
+						data-ifadd="{{item.ifAdd}}"
+						bindtap="handleAdd">
+						{{item.ifAdd ? '已添加' : '添加'}}
+					</view>
+				</block>
+			</view>
+			<van-empty wx:if="{{ !memberList.length }}" description="没有查询到数据哦～" />	
+		</view>
+	</view>
+	<van-popup
+		show="{{ showPopup }}"
+		position="bottom"
+		custom-style="height: 70%"
+		catch:click-overlay="closeUnitSelect"
+		catch:close="closeUnitSelect">
+		<view class="tree-select-box">
+			<van-tree-select
+				height="100%"
+			  items="{{ deptList }}"
+			  main-active-index="{{ mainActiveIndex }}"
+			  active-id="{{ activeId }}"
+			  catch:click-nav="onClickNav"
+			  catch:click-item="onClickItem"
+			/>
+		</view>
+	</van-popup>
+</view>

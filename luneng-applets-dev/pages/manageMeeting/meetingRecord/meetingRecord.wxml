@@ -1,0 +1,29 @@
+<wxs src="./../../../wxs/tool.wxs" module="tool" />
+<view class="container">
+  <view class="header">
+    <view class="title" >{{meetingInfo.meetingName}}</view>
+    <view class="flex-hor-align other" style="justify-content: space-between;">
+      <view>
+        <text>{{meetingInfo.deptName}}</text>
+        <text>{{tool.meetingTime(meetingInfo.meetingTime)}}</text>
+      </view>
+      <button class="flex-hor-center update-btn" 
+        wx:if="{{meetingInfo.isAdmin === '1'}}"
+        bindtap="updateRecord">
+        {{isReadOnly ? '修改' : '保存'}}
+      </button>
+    </view>
+  </view>
+  <view class="content">
+    <editor
+				id="editor" 
+        class="{{isReadOnly ? 'ql-container' : 'ql-container-active'}}" 
+        show-img-size
+        show-img-toolbar
+        show-img-resize
+        bindinput="editorBlur"
+				read-only="{{ isReadOnly }}" 
+				bindready="onEditorReady">
+		</editor>
+  </view>
+</view>

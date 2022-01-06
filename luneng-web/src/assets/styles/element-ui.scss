@@ -1,0 +1,264 @@
+// cover some element-ui styles
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+  color:rgba(255,255,255,1) !important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+  .el-dialog__title {
+    font-weight: bold;
+  }
+  .el-dialog__headerbtn {
+    font-size: 22px;
+  }
+  .el-dialog__body {
+    font-size: 18px;
+  }
+  .el-input--mini {
+    font-size: 18px !important;
+    .el-input__inner {
+      height: 32px;
+    }
+  }
+}
+
+.el-input--mini {
+  font-size: 18px !important;
+  .el-input__inner {
+    height: 32px;
+  }
+}
+
+.el-dialog:not(.is-fullscreen) {
+  margin-top: 6vh !important;
+}
+
+.el-dialog-center .el-dialog {
+  margin-top: 0!important;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.el-select--mini {
+
+}
+// dropdown
+.el-dropdown-menu {
+  a {
+    display: block
+  }
+}
+
+// fix date-picker ui bug in filter-item
+.el-range-editor .el-input__inner {
+  display: inline-flex !important;
+}
+
+// to fix el-date-picker css style
+.el-range-separator {
+  box-sizing: content-box;
+}
+
+.el-table {
+  .el-table__header-wrapper,
+  .el-table__fixed-header-wrapper {
+    .el-table__header {
+      th {
+        background-color: #f8f8f9;
+        color: #515a6e;
+        font-size: 18px;
+        word-break: break-word;
+        .cell {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+      }
+    }
+  }
+  .el-table__body-wrapper,
+  .el-table__fixed-body-wrapper {
+    .el-table__body {
+      td {
+        color: #000000;
+        font-size: 18px;
+        word-break: break-word;
+        .cell {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+        .el-input--mini {
+          font-size: 16px !important;
+          .el-input__inner {
+            height: 30px;
+          }
+        }
+      }
+    }
+    .el-table__empty-text {
+      font-size: 18px !important;
+    }
+  }
+  .el-table--mini,
+  .el-table--small,
+  .el-table__expand-icon {
+    font-size: 18px !important;
+  }
+}
+
+.el-tabs.mar0  {
+  /deep/ .el-tabs__header {
+    margin: 0;
+  }
+}
+
+.el-table__fixed-right::before,
+.el-table__fixed::before {
+  display: none;
+}
+
+.el-table .fixed-width .el-button--mini {
+  //color: #409EFF;
+  padding-left: 0;
+  padding-right: 0;
+  width: inherit;
+}
+
+.el-tree-node__content > .el-checkbox {
+  margin-right: 8px;
+}
+
+//修改选项卡底部遮出分页BUG
+.el-tabs .el-tab-pane {
+  padding-bottom: 20px;
+}
+
+.el-card__header {
+  padding: 14px 15px 7px;
+  min-height: 40px;
+}
+
+.el-card__body {
+  padding: 15px 20px 20px 20px;
+}
+
+.el-button--mini,
+.el-button--small {
+  font-size: 18px !important;
+  border-radius: 3px !important;
+}
+
+.el-form {
+  .el-form-item__label {
+    font-size: 18px;
+  }
+  .el-input--mini {
+    font-size: 18px !important;
+    .el-input__inner {
+      height: 32px;
+    }
+  }
+  .el-range-editor--mini {
+    height: 32px !important;
+    .el-range-input {
+      font-size: 18px !important;
+    }
+    .el-range-separator {
+      font-size: 14px !important;
+      line-height: 25px !important;
+    }
+  }
+}
+
+.el-scrollbar {
+  .el-select-dropdown__list {
+    .el-select-dropdown__item {
+      font-size: 18px;
+    }
+  }
+}
+
+.el-picker-panel {
+  .el-picker-panel__icon-btn {
+    font-size: 16px !important;
+  }
+  div {
+    font-size: 16px !important;
+  }
+  .el-month-table,
+  .el-year-table {
+    font-size: 16px !important;
+  }
+}
+
+.el-dropdown-menu--mini {
+  .el-dropdown-menu__item {
+    line-height: 24px !important;
+    padding: 0 10px !important;
+    font-size: 16px !important;
+  }
+}
+
+.el-message-box {
+  .el-message-box__header {
+    .el-message-box__title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .el-message-box__headerbtn {
+      font-size: 22px !important;
+    }
+  }
+  .el-message-box__content {
+    font-size: 18px !important;
+  }
+}
+
+.el-steps {
+  .el-step.is-horizontal .el-step__line {
+    top: 14px;
+  }
+  .el-step__icon {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+  .el-step__title {
+    font-size: 18px;
+  }
+}
+
+.el-tabs {
+  .el-tabs__item {
+    font-size: 18px;
+  }
+}
+
+.el-tag {
+  font-size: 18px !important;
+}
+.el-tag--mini {
+  height: 25px !important;
+  line-height: 23px !important;
+  padding: 0 5px !important;
+}
+
+ .vue-treeselect__control {
+   height: 32px !important;
+ }

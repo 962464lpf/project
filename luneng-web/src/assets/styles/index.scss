@@ -1,0 +1,482 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+@import './element-variables.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px 20px 40px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+
+// 详情页表格
+.detail-table {
+  border-collapse:collapse;
+  border-spacing:0;
+  color: #212121;
+  width: 100%;
+  line-height: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.detail-table>tr>td, .detail-table>tbody>tr>td {
+  border:1px solid rgba(233,233,233,1);
+  padding: 14px 20px;
+  background:rgba(243,243,243,1);
+  min-width: 130px;
+  width: 130px;
+}
+.detail-table>tr>td:nth-child(2n), .detail-table>tbody>tr>td:nth-child(2n) {
+  background-color: #fff;
+  width: auto;
+}
+
+.detail-title {
+  font-size: 19px;
+  padding: 10px 0;
+}
+.detail-hint {
+  padding: 10px 0 20px;
+}
+
+// 表单标题
+.form-title {
+  color: #212121;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #BDC2C9;
+}
+
+.module-shadow {
+  background-color: #fff;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.pdf-show-table.tc {
+  text-align: center;
+}
+// 595.28 * 841.89
+.pdf-content {
+  width: 795px;
+  .pdf-page {
+    width: 795px;
+    height: 1121px;
+    box-sizing: border-box;
+    padding: 85px 80px;
+    font-size: 12pt;
+    color: #000;
+    overflow: hidden;
+    .pdf-print-table {
+      color: #000;
+      line-height: 18pt;
+      font-size: 12pt;
+      border-top: 1pt solid #000;
+      border-left: 1pt solid #000;
+      box-sizing: border-box;
+      td {
+        border-bottom: 1pt solid #000;
+        border-right: 1pt solid #000;
+        padding: 2pt;
+        word-wrap: break-word;
+        word-break:break-all;
+      }
+    }
+    h1, h2 {
+      text-align: center;
+      font-weight: normal;
+    }
+    h1 {
+      font-size: 22pt;
+    }
+    h2 {
+      font-size: 16pt;
+      margin: 0;
+      margin-bottom: 4pt;
+    }
+    .item-number {
+      line-height: 28pt;
+    }
+    pre {
+      font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+      margin: 0;
+      padding-top: 4pt;
+      text-align: left;
+      white-space: pre-wrap;
+      line-height: 24pt;
+      overflow: hidden;
+      font-size: 12pt;
+      height: 100%;
+    }
+  }
+}
+
+
+
+.small-padding {
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.message-box {
+  top: 40%!important;
+}
+
+.declare-tab-content {
+  height: calc(100vh - 250px);
+  overflow: auto;
+}
+
+@media screen and (max-width: 1700px) {
+  .declare-tab-content {
+    height: calc(100vh - 290px);
+  }
+}
+
+.red, .red-hint, .hint-text.red-hint {
+  color: #EC808D;
+}
+
+.table-hint {
+  padding: 10px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+textarea[name=editorValue] {
+  display: none;
+}
+
+/*步骤条样式修改*/
+.is-process {
+  color: #2CBE60!important;
+  border-color: #2CBE60 !important;
+}
+
+// 修改ie浏览器下提示语文字
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {  /* Internet Explorer 10-11 */
+  color:#c8cbd2 !important;
+}
+
+// 申报表格
+.pdf-show-table, .pdf-print-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*特定容器下element UI 样式修改*/
+.pdf-show-table {
+  color: #000000;
+  line-height: 24px;
+  font-size: 18px;
+  td {
+    border: 1px solid #EBEEF5;
+    padding: 10px 15px;
+  }
+  &:first-child{
+    text-align: center;
+  }
+  /deep/ .el-form-item {
+    margin: 10px 0;
+  }
+}
+
+.pagination-container .el-pagination {
+  right: 0;
+  position: absolute;
+}
+
+.project-name-all {
+  font-size: 18px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.project-name-all-hover {
+  color: $--color-primary;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.project-name-all-grey {
+  color: #A9A9A9;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.project-name-all-red {
+  color: #FF0000FF;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.no-cursor-point {
+  cursor: default;
+}
+
+.red-placeholder {
+  .el-input input::placeholder, .el-textarea textarea::placeholder, .el-form-item__content input::placeholder {
+    color: #ec808d;
+  }
+  .el-input input::-ms-input-placeholder,
+  .el-textarea textarea::-ms-input-placeholder,
+  .el-form-item__content input::-ms-input-placeholder {
+    color: #ec808d;
+  }
+  .el-input input::-moz-placeholder,
+  .el-textarea textarea::-moz-placeholder,
+  .el-form-item__content input::-moz-placeholder {
+    color: #ec808d;
+  }
+  .tox-edit-area__iframe{
+    height: 10px;
+  }
+}
+
+.gray-placeholder {
+  .el-input input::placeholder, .el-textarea textarea::placeholder, .el-form-item__content input::placeholder {
+    color: #C0C4CC;
+  }
+}
+
+.fixed-width {
+  .el-button--mini {
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+
+    .el-tag {
+      margin-right: 0px;
+    }
+  }
+}
+
+.theme-message {
+  /deep/ .el-icon-loading {
+    margin-right: 10px;
+  }
+  /deep/ .el-message__content {
+    color: #333;
+  }
+}
+
+.cell {
+  .el-tag {
+    margin-right: 0px;
+  }
+}
+
+// refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+.table-upload-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
